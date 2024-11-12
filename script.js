@@ -16,8 +16,14 @@ function isVowel(text) {
 function checkVowels() {
   const userInput = inputText.value;
   console.log(`The word "${userInput}" has ${isVowel(userInput)} vowels`);
-  result.innerHTML = `The word "${userInput}" has ${isVowel(userInput)} vowels`;
-  reset()
+  if (inputText.value !== "") {
+    result.innerHTML = `The text "${userInput}" has ${isVowel(
+      userInput
+    )} vowels`;
+  } else {
+    result.innerHTML = "You have not entered any text!";
+  }
+  reset();
 }
 
 function reset() {
